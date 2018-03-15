@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Trivial Quiz</string>
+
+    <string name="header">CAN YOU FIND THE RIGHT ANSWERS?</string>
+
+    <string name="tag1">Question 1</string>
+    <string name="question1">Which of the following is larger than Brazil?</string>
+    <string name="question1_answer1">U.S.A</string>
+    <string name="question1_answer2">Russia</string>
+    <string name="question1_answer3">India</string>
+    <string name="question1_answer4">China</string>
+
+    <string name="tag2">Question 2</string>
+    <string name="question2">What is the national sport of Japan?</string>
+    <string name="question2_answer1">Sumo Wrestling</string>
+    <string name="question2_answer2">Kung Fu</string>
+    <string name="question2_answer3">Judo</string>
+    <string name="question2_answer4">Ping Pong</string>
+
+    <string name="tag3">Question 3</string>
+    <string name="question3">In which country did Hamlet live?</string>
+    <string name="question3_answer1">Britain</string>
+    <string name="question3_answer2">Germany</string>
+    <string name="question3_answer3">Denmark</string>
+    <string name="question3_answer4">Italy</string>
+
+    <string name="tag4">Question 4</string>
+    <string name="question4">What is the real meaning of the Greek word Pita?</string>
+    <string name="question4_answer1">Food</string>
+    <string name="question4_answer2">Pie</string>
+    <string name="question4_answer3">Treat</string>
+    <string name="question4_answer4">Souvlaki</string>
+
+    <string name="tag5">Question 5</string>
+    <string name="question5">How many oscars did the Titanic movie got?</string>
+    <string name="question5_answer1">Eight</string>
+    <string name="question5_answer2">Eleven</string>
+    <string name="question5_answer3">Ten</string>
+    <string name="question5_answer4">Five</string>
+
+    <string name="tag6">Question 6</string>
+    <string name="question6">Which planet is nearest the sun?</string>
+    <string name="question6_answer1">Venus</string>
+    <string name="question6_answer2">Mercury</string>
+
+    <string name="or">OR</string>
+
+    <string name="submit">Submit Answers</string>
+
+</resources>
