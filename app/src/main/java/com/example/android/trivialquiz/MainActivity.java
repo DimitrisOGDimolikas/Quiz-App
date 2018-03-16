@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
     RadioButton question5_choice2;
     /* Question 6 */
     RadioButton question6_choice2;
+    /* RadioGroups */
+    RadioGroup rdgrp2;
+    RadioGroup rdgrp4;
+    RadioGroup rdgrp5;
+    RadioGroup rdgrp6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +43,16 @@ public class MainActivity extends AppCompatActivity {
         /* Hide the keyboard*/
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         setContentView(R.layout.activity_main);
+
+        /*Initialize RadioGroups */
+        rdgrp2 = (RadioGroup) findViewById(R.id.RG2);
+        rdgrp2.clearCheck();
+        rdgrp4 = (RadioGroup) findViewById(R.id.RG4);
+        rdgrp4.clearCheck();
+        rdgrp5 = (RadioGroup) findViewById(R.id.RG5);
+        rdgrp5.clearCheck();
+        rdgrp6 = (RadioGroup) findViewById(R.id.RG6);
+        rdgrp6.clearCheck();
     }
 
     public void sumbitAnswers (View view){
@@ -64,71 +80,64 @@ public class MainActivity extends AppCompatActivity {
         answer1_choice2 = question1_choice2.isChecked();
         answer1_choice3 = question1_choice3.isChecked();
         answer1_choice4 = question1_choice4.isChecked();
-        if (answer1_choice1 && answer1_choice2 && !answer1_choice3 && answer1_choice4) {
+
+        if (answer1_choice1 && answer1_choice2 && !answer1_choice3 && answer1_choice4)
             answer1_score = 1;
-        } else {
+        else
             answer1_score = 0;
-        }
 
         /* Question 2 Check */
         boolean answer2;
         question2_choice1 = (RadioButton) this.findViewById(R.id.B1);
         answer2 = question2_choice1.isChecked();
-        if (answer2) {
+        if (answer2)
             answer2_score = 1;
-        } else {
+        else
             answer2_score = 0;
-        }
 
         /* Question 3 Check*/
         String answer3;
         question3_answer = (EditText) this.findViewById(R.id.question3);
         answer3 = question3_answer.getText().toString().toLowerCase();
-        if (answer3.equals("Denmark")) {
+        if (answer3.equals("Denmark"))
             answer3_score = 1;
-        } else {
+        else
             answer3_score = 0;
-        }
-
 
         /* Question 4 Check */
         boolean answer4;
         question4_choice2 = (RadioButton) this.findViewById(R.id.D2);
         answer4 = question4_choice2.isChecked();
-        if (answer4) {
+        if (answer4)
             answer4_score = 1;
-        } else {
+        else
             answer4_score = 0;
-        }
 
         /* Question 5 Check */
         boolean answer5;
         question5_choice2 = (RadioButton) this.findViewById(R.id.E2);
         answer5 = question5_choice2.isChecked();
-        if (answer5) {
+        if (answer5)
             answer5_score = 1;
-        } else {
+        else
             answer5_score = 0;
-        }
 
         /* Question 6 Check */
         boolean answer6;
         question6_choice2 = (RadioButton) this.findViewById(R.id.F2);
         answer6 = question6_choice2.isChecked();
-        if (answer6) {
+        if (answer6)
             answer6_score = 1;
-        } else {
+        else
             answer6_score = 0;
-        }
 
         /* Results */
         final_score = answer1_score + answer2_score + answer3_score + answer4_score + answer5_score + answer6_score;
 
-        if (final_score == 5) {
+        if (final_score == 6)
             resultsDisplay = "Perfect! You scored 6 out of 6!";
-        } else {
+        else
             resultsDisplay = "You scored " + final_score + " out of 6. You can try again!";
-        }
 
         Context context = getApplicationContext();
         int duration = Toast.LENGTH_LONG;
@@ -136,58 +145,16 @@ public class MainActivity extends AppCompatActivity {
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show();
 
-         /* Question 2 Wrong Options */
-        RadioButton Q2A2 = (RadioButton) findViewById(R.id.B2);
-        boolean question2_choice2 = Q2A2.isChecked();
-        RadioButton Q2A3 = (RadioButton) findViewById(R.id.B3);
-        boolean question2_choice3 = Q2A3.isChecked();
-        RadioButton Q2A4 = (RadioButton) findViewById(R.id.B4);
-        boolean question2_choice4 = Q2A4.isChecked();
-
-          /* Question 4 Wrong Options */
-        RadioButton Q4A1 = (RadioButton) findViewById(R.id.D1);
-        boolean question4_choice1 = Q4A1.isChecked();
-        RadioButton Q4A3 = (RadioButton) findViewById(R.id.D3);
-        boolean question4_choice3 = Q4A3.isChecked();
-        RadioButton Q4A4 = (RadioButton) findViewById(R.id.D4);
-        boolean question4_choice4 = Q4A4.isChecked();
-
-          /* Question 5 Wrong Options */
-        RadioButton Q5A1 = (RadioButton) findViewById(R.id.E1);
-        boolean question5_choice1 = Q5A1.isChecked();
-        RadioButton Q5A3 = (RadioButton) findViewById(R.id.E3);
-        boolean question5_choice3 = Q5A3.isChecked();
-        RadioButton Q5A4 = (RadioButton) findViewById(R.id.E4);
-        boolean question5_choice4 = Q5A4.isChecked();
-
-         /* Question 6 Wrong Option */
-        RadioButton Q6A1 = (RadioButton) findViewById(R.id.F1);
-        boolean question6_choice1 = Q6A1.isChecked();
-
          /* Resetting */
         question1_choice1.setChecked(false);
         question1_choice2.setChecked(false);
         question1_choice3.setChecked(false);
         question1_choice4.setChecked(false);
-        question2_choice1.setChecked(false);
         question3_answer.setText("");
-        question4_choice2.setChecked(false);
-        question5_choice2.setChecked(false);
-        question6_choice2.setChecked(false);
-
-        Q2A2.setChecked(false);
-        Q2A3.setChecked(false);
-        Q2A4.setChecked(false);
-
-        Q4A1.setChecked(false);
-        Q4A3.setChecked(false);
-        Q4A4.setChecked(false);
-
-        Q5A1.setChecked(false);
-        Q5A3.setChecked(false);
-        Q5A4.setChecked(false);
-
-        Q6A1.setChecked(false);
+        rdgrp2.clearCheck();
+        rdgrp4.clearCheck();
+        rdgrp5.clearCheck();
+        rdgrp6.clearCheck();
 
     }
 }
